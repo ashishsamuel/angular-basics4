@@ -1,3 +1,14 @@
 <div style="margin: 10px;background: green;">
     Services component
+
+    <div style="padding: 15px;" *ngFor="let service of services">
+        <div style="border: 2px solid;background-color: bisque;">
+            <div style="display: flex;flex-direction: column;">
+                <p>{{service.name}}</p>
+                <p>{{service.title}}</p>
+                <p>{{service.time}}</p>
+                <button (click)="viewServiceDetails(service)" [routerLink]="'/services/service/' + service.id">View More</button>
+            </div>
+        </div>
+    </div>
 </div>

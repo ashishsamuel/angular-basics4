@@ -12,3 +12,21 @@
         </li>
     </ul>
 </div>
+
+<!-- relative and absolute routes -->
+ <!-- absoulte routes are the routes with / infront of their paths in routerlink -->
+<!-- absolute routes will independently displayed and it will not get appended to the currently active route
+ instead it will get appended to the root url -->
+ <!-- for eg if you have route home and route about and we provide the absoulte routes as below :-
+    <a routerlink="/home">
+    <a routerlink="/about">
+ -->
+
+ <!-- relative path -> path gets appended to the currently active route -->
+  <!-- <a routerlink="home">
+    <a routerlink="about"> -->
+        <!--instead of / in absoulte path we can use ./ beofre the link path then it uses relative path and it appends the 
+        the route to the currently active route. when we use ../ then it will moe the route by 1 level and appends the route
+        to the parent route of the currently active route   -->
+
+<!--navigation between routes programatically  -->

@@ -1,0 +1,12 @@
+<div style="border: 2px solid;background-color: bisque;">
+            <div style="display: flex;flex-direction: column;">
+                <p>{{selectedService.name}}</p>
+                <p>{{selectedService.title}}</p>
+                <p>{{selectedService.time}}</p>
+            </div>
+            <div style="margin-top: 12px;display: flex;justify-content: space-between;">
+                <button *ngIf="selectedService.id>1" [routerLink]="'/services/service/' + (selectedService.id - 1)">Previous Service</button>
+                <button *ngIf="selectedService.id<this.allServices.length" [routerLink]="'/services/service/' + (selectedService.id + 1)">Next Service</button>
+            </div>
+            
+</div>
