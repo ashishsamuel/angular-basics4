@@ -1,0 +1,39 @@
+<div style="margin: 20px;padding: 15px;">
+    <!-- lowercase pipe -->
+    <div style="display: flex;">
+        <span>Lowecase pipe -></span>
+        <span>{{name|lowercase}}</span>
+    </div>
+
+    <!-- uppercase pipe -->
+    <div style="display: flex;">
+        <span>Uppercase pipe -></span>
+        <span>{{name|uppercase}}</span>
+    </div>
+
+    <!-- date pipe -->
+    <div style="display: flex;">
+        <span>date pipe -> </span> 
+        <span>{{dateValue | date:'long'}}</span>
+    </div>
+    <!-- percent pipe -->
+     <div style="display: flex;">
+        <span>percent pipe -> </span> 
+        <span>{{(marksObtained/totalMarks) | percent}}</span>
+    </div>
+    <!-- currency pipe -->
+     <div style="display: flex;">
+        <span>currency pipe -> </span> 
+        <span>{{ 7000 | currency:'INR'}}</span>
+    </div>
+    <!-- chaining multiple pipes together -->
+     <div style="display: flex;">
+        <span>chaining multiple pipes together -></span>
+        <span>{{dateValue | date:'longDate' | uppercase}}</span>
+     </div>
+     <!-- custom percentage pipe -->
+     <div style="display: flex;">
+        <span>percentage pipe -> </span> 
+        <span>{{marksObtained | percentage:totalMarks:2}}</span>
+    </div>
+</div>

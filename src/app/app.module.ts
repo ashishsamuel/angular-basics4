@@ -9,6 +9,8 @@ import { ServicesComponent } from './services/services.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { HeaderComponent } from './header/header.component';
 import { ServiceDetailComponent } from './service-detail/service-detail.component';
+import { PipesComponent } from './pipes/pipes.component';
+import { PercentagePipe } from './shared/pipes/percentage.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ServiceDetailComponent } from './service-detail/service-detail.componen
     ServicesComponent,
     NotfoundComponent,
     HeaderComponent,
-    ServiceDetailComponent
+    ServiceDetailComponent,
+    PipesComponent,
+    PercentagePipe
   ],
   imports: [
     BrowserModule,

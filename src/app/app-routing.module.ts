@@ -5,6 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from './services/services.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ServiceDetailComponent } from './service-detail/service-detail.component';
+import { PipesComponent } from './pipes/pipes.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   // and multiple route parameters can be defined in the same route like below :-
   // path:'services/service/:id/:name
   {path:'services/service/:id', component: ServiceDetailComponent},
+  {path:'pipes', component: PipesComponent},
 
   // wildcard routing for a route not in the above list
   {path:'**', component: NotfoundComponent}
