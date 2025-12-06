@@ -2,7 +2,7 @@
   <h3>Student Data</h3>
   <div style="padding-top: 15px; position: relative;">
     <!-- Gender Dropdown -->
-    <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
+    <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;flex-direction: column;float: right;">
   <mat-form-field appearance="fill" style="width: 200px;">
     <mat-label>Gender</mat-label>
     <mat-select [value]="filterBy" name="genderFilter" (selectionChange)="onFilterValueChanged($event)">
@@ -15,6 +15,9 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
+  <div>
+    <span>Total Number of Students : {{totalNoStudents | async}}</span>
+  </div>
 </div>
 
     <!-- Students Data Table -->

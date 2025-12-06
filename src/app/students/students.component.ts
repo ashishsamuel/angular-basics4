@@ -37,6 +37,11 @@ export class StudentsComponent implements OnInit{
   }
 
   filterBy: string = 'all';
+  totalNoStudents = new Promise((resolve,reject)=>{
+    setTimeout(() => {
+      resolve(StudentsData.length)
+    }, 2000);
+  });
 
   ngOnInit() {
     this.studService.students = StudentsData;
