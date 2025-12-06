@@ -1,0 +1,71 @@
+<div style="display: flex; flex-direction: column; margin: 20px; padding: 15px">
+  <h3>Student Data</h3>
+  <div style="padding-top: 15px; position: relative;">
+    <!-- Gender Dropdown -->
+    <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
+  <mat-form-field appearance="fill" style="width: 200px;">
+    <mat-label>Gender</mat-label>
+    <mat-select [(ngModel)]="filterBy" name="genderFilter">
+      <mat-option value="">All</mat-option>
+      <mat-option
+        *ngFor="let gender of genderCategory"
+        [value]="gender.value"
+      >
+        {{ gender.label }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+    <!-- Students Data Table -->
+    <table mat-table [dataSource]="studentsFullDetails.data | filter:filterBy" class="mat-elevation-z8" style="width: 100%;">
+
+      <!-- Id Column -->
+      <ng-container matColumnDef="Id">
+        <th mat-header-cell *matHeaderCellDef>Id</th>
+        <td mat-cell *matCellDef="let element">{{element.id}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{element.name}}</td>
+      </ng-container>
+
+      <!-- Gender Column -->
+      <ng-container matColumnDef="Gender">
+        <th mat-header-cell *matHeaderCellDef>Gender</th>
+        <td mat-cell *matCellDef="let element">{{element.gender}}</td>
+      </ng-container>
+
+      <!-- Marks Column -->
+      <ng-container matColumnDef="Marks">
+        <th mat-header-cell *matHeaderCellDef>Marks</th>
+        <td mat-cell *matCellDef="let element">{{element.marks}}</td>
+      </ng-container>
+
+      <!-- Place Column -->
+      <ng-container matColumnDef="Place">
+        <th mat-header-cell *matHeaderCellDef>Place</th>
+        <td mat-cell *matCellDef="let element">{{element.place}}</td>
+      </ng-container>
+
+      <!-- Course Column -->
+      <ng-container matColumnDef="Course">
+        <th mat-header-cell *matHeaderCellDef>Course</th>
+        <td mat-cell *matCellDef="let element">{{element.course}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columnHeaderNames"></tr>
+      <tr mat-row *matRowDef="let row; columns: columnHeaderNames;"></tr>
+    </table>
+
+    <!-- Paginator -->
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+      aria-label="Select page of students"
+      style="display: flex; justify-content: flex-end; background-color: #f5f5f5;">
+    </mat-paginator>
+  </div>
+</div>

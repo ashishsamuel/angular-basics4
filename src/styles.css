@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* .mat-mdc-form-field-infix {
+    height: 35px;
+    margin-top: 20px;
+}
+
+.mdc-floating-label {
+    margin-top: -12px;
+    padding-top: 12px;
+}
+
+.mat-mdc-select-arrow-wrapper {
+    padding-top: 10px;
+} */
+
+/* .mat-mdc-select-panel {
+    top: -631px !important;
+    position: relative !important;
+    left: 1271.8px !important;
+    background: white !important;
+} */

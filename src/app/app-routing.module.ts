@@ -6,6 +6,7 @@ import { ServicesComponent } from './services/services.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ServiceDetailComponent } from './service-detail/service-detail.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { StudentsComponent } from './students/students.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   // path:'services/service/:id/:name
   {path:'services/service/:id', component: ServiceDetailComponent},
   {path:'pipes', component: PipesComponent},
+  {path:'students', component: StudentsComponent},
 
   // wildcard routing for a route not in the above list
   {path:'**', component: NotfoundComponent}

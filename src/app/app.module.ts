@@ -11,6 +11,16 @@ import { HeaderComponent } from './header/header.component';
 import { ServiceDetailComponent } from './service-detail/service-detail.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { PercentagePipe } from './shared/pipes/percentage.pipe';
+import { StudentsComponent } from './students/students.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {FormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {NgFor} from '@angular/common';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTableModule,MatTableDataSource} from '@angular/material/table';
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import { FilterPipe } from './shared/pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -22,11 +32,20 @@ import { PercentagePipe } from './shared/pipes/percentage.pipe';
     HeaderComponent,
     ServiceDetailComponent,
     PipesComponent,
-    PercentagePipe
+    PercentagePipe,
+    StudentsComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule, 
+    MatSelectModule, 
+    MatInputModule, 
+    FormsModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
