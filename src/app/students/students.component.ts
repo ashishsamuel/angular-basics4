@@ -1,6 +1,7 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { StudentsService } from './students.service';
 
 export interface StudentDetails {
   id: string;
@@ -29,14 +30,24 @@ const StudentsData: StudentDetails[] = [
   templateUrl: './students.component.html',
   styleUrls: ['./students.component.css']
 })
-export class StudentsComponent {
+export class StudentsComponent implements OnInit{
 
-  filterBy: string = '';
+  constructor(private studService: StudentsService) {
+
+  }
+
+  filterBy: string = 'all';
+
+  ngOnInit() {
+    this.studService.students = StudentsData;
+
+    this.studService.filterStudentsByGender(this.filterBy)
+  }
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngAfterViewInit() {
-    this.studentsFullDetails.paginator = this.paginator;  
+    this.studentsFullDetails.paginator = this.paginator;
   }
 
   genderCategory = [
@@ -48,5 +59,12 @@ export class StudentsComponent {
   studentsFullDetails = new MatTableDataSource<StudentDetails>(StudentsData);;
 
   columnHeaderNames: string[] = ['Id','Name','Gender','Marks','Place','Course']
+
+  // filtering studentsdata based on service 
+  onFilterValueChanged(event:any){
+    console.log("event.target.value",event.value);
+    let selectedValue = event.value;
+    this.studentsFullDetails.data = this.studService.filterStudentsByGender(selectedValue);
+  }
 
 }

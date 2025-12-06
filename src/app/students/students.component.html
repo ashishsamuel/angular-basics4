@@ -5,8 +5,8 @@
     <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
   <mat-form-field appearance="fill" style="width: 200px;">
     <mat-label>Gender</mat-label>
-    <mat-select [(ngModel)]="filterBy" name="genderFilter">
-      <mat-option value="">All</mat-option>
+    <mat-select [value]="filterBy" name="genderFilter" (selectionChange)="onFilterValueChanged($event)">
+      <!-- <mat-option value="">All</mat-option> -->
       <mat-option
         *ngFor="let gender of genderCategory"
         [value]="gender.value"
@@ -18,8 +18,10 @@
 </div>
 
     <!-- Students Data Table -->
-    <table mat-table [dataSource]="studentsFullDetails.data | filter:filterBy" class="mat-elevation-z8" style="width: 100%;">
-
+     <!-- using filter custom pipe -->
+    <!-- <table mat-table [dataSource]="studentsFullDetails.data | filter:filterBy" class="mat-elevation-z8" style="width: 100%;"> -->
+    <table mat-table [dataSource]="studentsFullDetails.data" class="mat-elevation-z8" style="width: 100%;">
+  
       <!-- Id Column -->
       <ng-container matColumnDef="Id">
         <th mat-header-cell *matHeaderCellDef>Id</th>
